@@ -12,7 +12,7 @@ from django.contrib.contenttypes import generic
 
 
 class InstitucionAdmin(admin.ModelAdmin):
-        list_display = ['id', 'localidad','director','secretaria','telefonos','OtrosContactos']
+        list_display = ['id','nombre', 'localidad','director','secretaria','telefonos','OtrosContactos']
 
 class EspecialidadAdmin(admin.ModelAdmin):
         list_display = ['id','nombre','cantidad_A','tipo']

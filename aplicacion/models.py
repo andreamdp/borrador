@@ -42,7 +42,7 @@ class Especialidad(models.Model):
     
 class Institucion(models.Model):
    
-    nombre = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=70)
     localidad = models.ForeignKey('Localidad')
     director = models.CharField(max_length=50)
     secretaria = models.CharField(max_length=50)

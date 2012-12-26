@@ -43,8 +43,8 @@ class MyReport(UsersReport):
         height=0.7*cm
         elements=[
             ObjectValue(attribute_name='a_Comienzo', top=0.1*cm, left=0),
-            ObjectValue(attribute_name='especialidad', top=0.1*cm, left=2.1*cm),
-            ObjectValue(attribute_name='coordinador', top=0.1*cm, left=8*cm),
+            ObjectValue(attribute_name='especialidad', top=0.1*cm, left=1.0*cm),
+            ObjectValue(attribute_name='coordinador', top=0.1*cm, left=7.5*cm),
             ObjectValue(attribute_name='institucion', top=0.1*cm, left=12*cm),
             ObjectValue(attribute_name='jefeServicio', top=0.1*cm, left=17.5*cm),
             ObjectValue(attribute_name='asesorDocente', top=0.1*cm, left=22*cm),
