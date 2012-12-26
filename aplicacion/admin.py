@@ -20,13 +20,15 @@ class ResidenciaAutInline(admin.TabularInline):
     extra = 1
     max_num = 1
 class ResidenciaAdmin(admin.ModelAdmin):
+
+  list_display = ['id', 'a_Comienzo','institucion','jefeServicio','coordinador','asesorDocente'] 
   fieldsets = (
         (None,{
             'fields':(('a_Comienzo'),('especialidad','institucion'))}),    
         ('Cantidad Residentes', {
 	        'classes' : ('collapse closed',),            
                 'classes' : ('grp-collapse grp-open',),
-                'fields':(('cantA_1','cantA_2'),('cantA_3','cantA_4','jefeResidentes'),)}),
+                'fields':(('cantA_1','cantA_2','cantA_3'),('cantA_4','jefeResidentes'),())}),
         ('Profesionales', { 
             'classes' : ('collapse closed',),
             'classes' : ('grp-collapse grp-open',),
