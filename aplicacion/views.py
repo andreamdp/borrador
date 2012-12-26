@@ -25,17 +25,17 @@ class MyReport(UsersReport):
         elements = [
             SystemField(expression='%(report_title)s', top=0.1*cm, left=0, width=BAND_WIDTH,
                 style={'fontName': 'Helvetica-Bold', 'fontSize': 20, 'alignment': TA_CENTER,  'textColor': navy}),
-            Label(text="Año_Comienzo", top=2*cm, left=0),
-            Label(text="Especialidad", top=2*cm, left=3*cm),
-            Label(text="Coordinador", top=2*cm, left=6*cm),
-            Label(text="Institucion", top=2*cm, left=10*cm),
-            Label(text="Jefe de Residentes", top=2*cm, left=14*cm),
-            Label(text="Asesor Docente", top=2*cm, left=18*cm),
-            Label(text="Jefe de Servicio", top=2*cm, left=22*cm),
-            Label(text="Año 1", top=2*cm, left=26*cm),
-            Label(text="Año 2", top=2*cm, left=28*cm),
-            Label(text="Año 3", top=2*cm, left=30*cm),
-            Label(text="Año 4", top=2*cm, left=32*cm),
+            Label(text="Año Comienzo", top=2*cm, left=0),
+            Label(text="Especialidad", top=2*cm, left=3.6*cm),
+            Label(text="Coordinador", top=2*cm, left=8*cm),
+            Label(text="Institucion", top=2*cm, left=13*cm),
+            Label(text="Jefe Servicio", top=2*cm, left=18*cm),
+            Label(text="Asesor Docente", top=2*cm, left=22*cm),
+            Label(text="Jefe Residentes", top=2*cm, left=25*cm),
+            Label(text="Año1", top=2*cm, left=28.1*cm),
+            Label(text="Año2", top=2*cm, left=29.4*cm),
+            Label(text="Año3", top=2*cm, left=30.7*cm),
+            Label(text="Año4", top=2*cm, left=32*cm),
             
                     ]
         borders = {'bottom': Line(stroke_color=black, stroke_width=1)}
@@ -43,16 +43,16 @@ class MyReport(UsersReport):
         height=0.7*cm
         elements=[
             ObjectValue(attribute_name='a_Comienzo', top=0.1*cm, left=0),
-            ObjectValue(attribute_name='especialidad', top=0.1*cm, left=3.10*cm),
-            ObjectValue(attribute_name='coordinador', top=0.1*cm, left=6.10*cm),
-            ObjectValue(attribute_name='institucion', top=0.1*cm, left=10.10*cm),
-            ObjectValue(attribute_name='jefeResidentes', top=0.1*cm, left=14.10*cm),
-            ObjectValue(attribute_name='asesorDocente', top=0.1*cm, left=18.10*cm),
-            ObjectValue(attribute_name='jefeServicio', top=0.1*cm, left=22.10*cm),
-            ObjectValue(attribute_name='cantA_1', top=0.1*cm, left=26.18*cm),
-            ObjectValue(attribute_name='cantA_2', top=0.1*cm, left=28.18*cm),
-            ObjectValue(attribute_name='cantA_3', top=0.1*cm, left=30.18*cm),
-            ObjectValue(attribute_name='cantA_4', top=0.1*cm, left=32.18*cm),
+            ObjectValue(attribute_name='especialidad', top=0.1*cm, left=2.1*cm),
+            ObjectValue(attribute_name='coordinador', top=0.1*cm, left=8*cm),
+            ObjectValue(attribute_name='institucion', top=0.1*cm, left=12*cm),
+            ObjectValue(attribute_name='jefeServicio', top=0.1*cm, left=17.5*cm),
+            ObjectValue(attribute_name='asesorDocente', top=0.1*cm, left=22*cm),
+            ObjectValue(attribute_name='jefeResidentes', top=0.1*cm, left=26.5*cm),
+            ObjectValue(attribute_name='cantA_1', top=0.1*cm, left=28.2*cm),
+            ObjectValue(attribute_name='cantA_2', top=0.1*cm, left=29.5*cm),
+            ObjectValue(attribute_name='cantA_3', top=0.1*cm, left=30.8*cm),
+            ObjectValue(attribute_name='cantA_4', top=0.1*cm, left=32.1*cm),
             
             
             ]

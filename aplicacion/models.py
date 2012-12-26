@@ -86,7 +86,7 @@ class ResidenciaAut(models.Model):
     fechaEvaluacMixta = DateField('Fecha de Evaluación Mixta', blank = True, null = True)
     fechaCeseActividad = DateField('Fecha de cese de evaluación', blank = True, null = True)
     jefeServicio = models.CharField('Jefe de Servicio',max_length=50, blank = True, null = True)
-    coordinador = models.CharField('Coordinador',max_length=50)
+    coordinador = models.CharField('Coordinador',max_length=50, blank = True, null = True)
     asesorDocente = models.CharField('Asesor Docente', max_length=50, blank = True)
     tipo = models.CharField(max_length=2, choices=tipo_choice, blank = True)  
     class Meta:
