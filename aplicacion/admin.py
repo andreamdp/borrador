@@ -8,17 +8,11 @@ from django.views.generic.simple import direct_to_template
 from django.forms import TextInput, Textarea
 from parametricas.models import Tipo
 from django.contrib.contenttypes import generic
-class ResidenciaInline(generic.GenericTabularInline):
-    model = ResidenciaAut
-class ResidenciaAutInline(admin.TabularInline):
-    model = ResidenciaAut
-    formfield_overrides = {
-	models.TextField: {'widget': Textarea(attrs={'rows':2, 'cols':50})},
-        models.DecimalField: {'widget': TextInput(attrs={'size':'8'})},
-    }
-    
-    extra = 1
-    max_num = 1
+
+
+
+class InstitucionAdmin(admin.ModelAdmin):
+        list_display = ['id', 'localidad','director','secretaria','telefonos','OtrosContactos'] 
 class ResidenciaAdmin(admin.ModelAdmin):
 
   list_display = ['id', 'a_Comienzo','institucion','jefeServicio','coordinador','asesorDocente'] 
@@ -41,12 +35,11 @@ class ResidenciaAdmin(admin.ModelAdmin):
             }),
         
 	        )
-  #inlines = [ResidenciaAutInline]
-  #inlines = [        ResidenciaInline,    ]
+
 
 
 admin.site.register(Especialidad)
-admin.site.register(Institucion)
+admin.site.register(Institucion, InstitucionAdmin)
 admin.site.register(Localidad)
 admin.site.register(ResidenciaAut, ResidenciaAdmin)
 #admin.site.register(Profesional)
