@@ -21,7 +21,7 @@ urlpatterns = patterns('',
  #   (r'^basic-admin/', include(basic_site.urls)),
  #   (r'^advanced-admin/', include(advanced_site.urls)),
     (r'^media/(.*)$', 'django.views.static.serve', { 'document_root': settings.MEDIA_ROOT }),
-    ('reporte/', my_view),
+    url('reporte/', my_view),
     # Your URL pattern could be as simple as
    
 )
