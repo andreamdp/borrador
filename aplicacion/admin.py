@@ -15,7 +15,7 @@ class InstitucionAdmin(admin.ModelAdmin):
         list_display = ['id','nombre', 'localidad','director','secretaria','telefonos','OtrosContactos']
 
 class EspecialidadAdmin(admin.ModelAdmin):
-        list_display = ['id','nombre','cantidad_A','tipo']
+        list_display = ['codigo','nombre','cantidad_A','tipo']
 
 class LocalidadAdmin(admin.ModelAdmin):
         list_display = ['id','nombre']
