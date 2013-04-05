@@ -22,7 +22,7 @@ class LocalidadAdmin(admin.ModelAdmin):
         
 class ResidenciaAdmin(admin.ModelAdmin):
 
-  list_display = ['id', 'a_Comienzo','institucion','jefeServicio','coordinador','asesorDocente'] 
+  list_display = ['id', 'a_Comienzo','institucion','especialidad','fechaEvaluacColMed','fechaCeseActividad'] 
   fieldsets = (
         (None,{
             'fields':(('a_Comienzo'),('especialidad','institucion'))}),    
@@ -38,7 +38,7 @@ class ResidenciaAdmin(admin.ModelAdmin):
         ('Evaluaciones', { 
             'classes' : ('collapse closed',),
             'classes' : ('grp-collapse grp-open',),
-            'fields':(('fechaEvaluacColMed','tipo'),('fechaEvaluacMixta'),('fechaCeseActividad'),)
+            'fields':(('fechaEvaluacColMed','tipo'),('fechaCeseActividad'),)
             }),
         
 	        )
