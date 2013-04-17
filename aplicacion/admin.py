@@ -17,7 +17,11 @@ def copiar_residencia(modeladmin, request, queryset):
         sd_copy.save()    # initial save
     sd_copy.save()  # (7) save the copy to the database for M2M 
     
-    copiar_residencia.short_description = 'Copiar Residencias seleccionadas'
+copiar_residencia.short_description = 'Copiar Residencias seleccionadas'
+
+def actualiza_a(modeladmin, request, queryset):
+    queryset.update(a_Comienzo='2013')
+actualiza_a.short_description = "Actualizar a Año 2013"
 
 class InstitucionAdmin(admin.ModelAdmin):
         list_display = ['id','nombre', 'localidad','director','secretaria','telefonos','OtrosContactos']
@@ -29,7 +33,7 @@ class LocalidadAdmin(admin.ModelAdmin):
         list_display = ['id','nombre']
         
 class ResidenciaAdmin(admin.ModelAdmin):
-  actions = [copiar_residencia]  
+  actions = [copiar_residencia, actualiza_a]  
   list_display = ['id', 'a_Comienzo','institucion','especialidad','fechaEvaluacColMed','fechaCeseActividad'] 
   fieldsets = (
         (None,{
