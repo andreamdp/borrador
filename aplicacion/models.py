@@ -87,7 +87,7 @@ class ResidenciaAut(models.Model):
     fechaCeseActividad = DateField('Fecha de Vencimiento Acreditación', blank = True, null = True)
     jefeServicio = models.CharField('Jefe de Servicio',max_length=50, blank = True, null = True)
     coordinador = models.CharField('Coordinador',max_length=50, blank = True, null = True)
-    asesorDocente = models.CharField('Asesor Docente', max_length=50, blank = True)
+    asesorDocente = models.CharField('Asesor Docente', max_length=350, blank = True)
     tipo = models.CharField(max_length=2, choices=tipo_choice, blank = True)  
     class Meta:
 	verbose_name = "Residencia"        

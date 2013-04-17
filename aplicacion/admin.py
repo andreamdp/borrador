@@ -19,8 +19,13 @@ def copiar_residencia(modeladmin, request, queryset):
     
 copiar_residencia.short_description = 'Copiar Residencias seleccionadas'
 
-def actualiza_a(modeladmin, request, queryset):
-    queryset.update(a_Comienzo='2013')
+def actualiza_a(self, request, queryset):
+        rows_updated =  queryset.update(a_Comienzo='2013')
+        if rows_updated == 1:
+            message_bit = "1 residencia fue correctamente actualizada"
+        else:
+            message_bit = "%s residencias fueron correctamente actualizadas" % rows_updated
+        self.message_user(request, "%s ." % message_bit)
 actualiza_a.short_description = "Actualizar a Año 2013"
 
 class InstitucionAdmin(admin.ModelAdmin):
