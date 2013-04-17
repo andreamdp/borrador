@@ -4,12 +4,20 @@ from models import Especialidad, Institucion, Localidad, ResidenciaAut, Profesio
 from views import *
 from parametricas.models import Tipo
 from forms import *
-from django.views.generic.simple import direct_to_template
+
 from django.forms import TextInput, Textarea
 from parametricas.models import Tipo
 from django.contrib.contenttypes import generic
-
-
+import copy  # (1) use python copy
+def copiar_residencia(modeladmin, request, queryset):
+    # sd is an instance of resiencias
+    for sd in queryset:
+        sd_copy = copy.copy(sd) # (2) django copy object
+        sd_copy.id = None   # (3) set 'id' to None to create new object
+        sd_copy.save()    # initial save
+    sd_copy.save()  # (7) save the copy to the database for M2M 
+    
+    copiar_residencia.short_description = 'Copiar Residencias seleccionadas'
 
 class InstitucionAdmin(admin.ModelAdmin):
         list_display = ['id','nombre', 'localidad','director','secretaria','telefonos','OtrosContactos']
@@ -21,7 +29,7 @@ class LocalidadAdmin(admin.ModelAdmin):
         list_display = ['id','nombre']
         
 class ResidenciaAdmin(admin.ModelAdmin):
-
+  actions = [copiar_residencia]  
   list_display = ['id', 'a_Comienzo','institucion','especialidad','fechaEvaluacColMed','fechaCeseActividad'] 
   fieldsets = (
         (None,{
