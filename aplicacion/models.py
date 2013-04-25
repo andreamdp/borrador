@@ -88,7 +88,9 @@ class ResidenciaAut(models.Model):
     jefeServicio = models.CharField('Jefe de Servicio',max_length=50, blank = True, null = True)
     coordinador = models.CharField('Coordinador',max_length=50, blank = True, null = True)
     asesorDocente = models.CharField('Asesor Docente', max_length=100, blank = True)
-    tipo = models.CharField(max_length=2, choices=tipo_choice, blank = True)  
+    asesorDocente2 = models.CharField('Asesor Docente', max_length=100, blank = True)
+    tipo = models.CharField(max_length=2, choices=tipo_choice, blank = True)
+    
     class Meta:
 	verbose_name = "Residencia"        
 	verbose_name_plural = "Residencias"

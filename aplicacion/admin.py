@@ -50,7 +50,7 @@ class ResidenciaAdmin(admin.ModelAdmin):
         ('Profesionales', { 
             'classes' : ('collapse closed',),
             'classes' : ('grp-collapse grp-open',),
-            'fields':(('jefeServicio'),('coordinador'),('asesorDocente'),)
+            'fields':(('jefeServicio'),('coordinador'),('asesorDocente'),('asesorDocente2'))
             }),
         ('Evaluaciones', { 
             'classes' : ('collapse closed',),
