@@ -1,0 +1,30 @@
+/*
+Original design: Basic Show (Sep 11, 2012) - A free xhtml/css website template by Andreas Viklund.
+For more information, see http://andreasviklund.com/templates/basic-show/
+*/
+
+body{background:#f6f6f6 url(bodybg.gif) top left repeat-x;color:#303030;font:92% Georgia, Times New Roman, serif;margin:0;padding:0;}
+#wrap,#footer{margin:0 auto;width:960px;}
+#maincontent{background:#fff;border:4px solid #e49938;height:100%;padding:20px;}
+#footer{color:#707070;padding:10px;text-align:center;}
+#footer a{color:#707070;font-weight:700;}
+a{color:#e49938;font-weight:700;text-decoration:none;}
+a:hover{text-decoration:underline;}
+a img{border:0;}
+h1{color:#e49938;font-size:3.8em;font-weight:400;letter-spacing:-2px;line-height:1.1em;margin:60px 0 -10px;padding:0 0 0 25px;}
+h1 a:hover{color:#505050;text-decoration:none;}
+h2{color:#467aa7;font-size:2.2em;font-weight:400;margin:5px 0 15px;}
+h3{color:#467aa7;font-size:1.7em;font-weight:400;margin:5px 0 15px;}
+h1 a,h2 a{color:#e49938;}
+li{margin-bottom:5px;}
+p{line-height:1.5em;margin:0 0 15px;}
+#toptabs{font-size:1.5em;display:inline;position:absolute;right:5%;top:4px;}
+#toptabs p{color:gray;text-align:right;}
+.toptab{background:#707070 url(corner.gif) bottom left no-repeat;color:#f0f0f0;font-weight:400;margin:0 0 0 3px;padding:3px 10px 5px;text-decoration:none;}
+.toptab:hover{background-color:#505050;color:#fff;text-decoration:none;}
+.active{background:#e49938 url(corner.gif) bottom left no-repeat;color:#fff;}
+.active:hover{background-color:#e49938;color:#fff;}
+.hide{display:none;}
+.clear {clear:both; height:1px; visibility:hidden;}
+.left {float:left; width:47%;}
+.right {float:right; width:47%;}
