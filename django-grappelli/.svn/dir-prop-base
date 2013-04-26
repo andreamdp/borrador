@@ -1,0 +1,11 @@
+K 10
+svn:ignore
+V 16
+dist
+*.egg-info
+
+K 13
+svn:mergeinfo
+V 33
+/branches/grappelli_dev:1265-1272
+END

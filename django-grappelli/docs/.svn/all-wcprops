@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 29
+/svn/!svn/ver/1456/trunk/docs
+END
+customization.rst
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1455/trunk/docs/customization.rst
+END
+dashboard_api.rst
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1421/trunk/docs/dashboard_api.rst
+END
+dashboard_extension.rst
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1440/trunk/docs/dashboard_extension.rst
+END
+dashboard_layout.rst
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1440/trunk/docs/dashboard_layout.rst
+END
+changelog.rst
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1456/trunk/docs/changelog.rst
+END
+troubleshooting.rst
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1369/trunk/docs/troubleshooting.rst
+END
+releasenotes.rst
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1404/trunk/docs/releasenotes.rst
+END
+javascripts.rst
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1404/trunk/docs/javascripts.rst
+END
+thirdparty.rst
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1369/trunk/docs/thirdparty.rst
+END
+quickstart.rst
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1440/trunk/docs/quickstart.rst
+END
+templates.rst
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1440/trunk/docs/templates.rst
+END
+djangoissues.rst
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1440/trunk/docs/djangoissues.rst
+END
+conf.py
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/1456/trunk/docs/conf.py
+END
+faq.rst
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/1386/trunk/docs/faq.rst
+END
+index.rst
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/1456/trunk/docs/index.rst
+END
+dashboard_setup.rst
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1420/trunk/docs/dashboard_setup.rst
+END
