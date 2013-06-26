@@ -4,7 +4,11 @@ import os
 PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'residenciascolmed9@gmail.com'
+EMAIL_HOST_PASSWORD = 'Colmed9-9'
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -13,8 +17,8 @@ MANAGERS = ADMINS
 #GRAPPELLI_ADMIN_TITLE = 'Residencias - Colmed IX'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',#Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'prueba',#Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -172,5 +176,5 @@ LOGGING = {
     }
 }
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()

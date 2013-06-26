@@ -1,22 +1,19 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
-# Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 from aplicacion.views import *
 from aplicacion.forms import *
-
+from django.views.generic import list_detail, date_based, create_update
 
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'Colegio.views.home', name='home'),
-    # url(r'^Colegio/', include('Colegio.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
+   
     # Uncomment the next line to enable the admin:
+    url(r'^admin/password_reset/$', 'django.contrib.auth.views.password_reset', name='admin_password_reset'),
+    url(r'^admin/password_reset/done/$', 'django.contrib.auth.views.password_reset_done'),
+    url(r'^reset/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$', 'django.contrib.auth.views.password_reset_confirm'),
+    url(r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete'),
     (r'^reporte/$', my_view),
     url('', include(admin.site.urls)),
  #   (r'^basic-admin/', include(basic_site.urls)),
