@@ -71,9 +71,7 @@ class ResidenciaAut(models.Model):
         ('M', 'Mixta'),
         
     )
-   # content_type = models.ForeignKey(ContentType)
-   # object_id = models.PositiveIntegerField()
-   # content_object = generic.GenericForeignKey("content_type", "object_id")
+ 
     a_Comienzo =  PositiveSmallIntegerField('Año')
     especialidad = models.ForeignKey(Especialidad, related_name='+', null = True, blank = True)
     institucion =  models.ForeignKey('Institucion', related_name='+', null =  True, blank = True)
@@ -88,9 +86,8 @@ class ResidenciaAut(models.Model):
     jefeServicio = models.CharField('Jefe de Servicio',max_length=50, blank = True, null = True)
     coordinador = models.CharField('Coordinador',max_length=50, blank = True, null = True)
     asesorDocente = models.CharField('Asesor Docente', max_length=150, blank = True)
-    #asesorDocente2 = models.CharField('i', max_length=100, blank = True)
     tipo = models.CharField(max_length=2, choices=tipo_choice, blank = True)
-    
+	memo = 	models.TextField('Memo', null=True, blank=True)
     class Meta:
 	verbose_name = "Residencia"        
 	verbose_name_plural = "Residencias"

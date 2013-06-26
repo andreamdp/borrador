@@ -55,7 +55,7 @@ class ResidenciaAdmin(admin.ModelAdmin):
         ('Evaluaciones', { 
             'classes' : ('collapse closed',),
             'classes' : ('grp-collapse grp-open',),
-            'fields':(('fechaEvaluacColMed','tipo'),('fechaCeseActividad'),)
+            'fields':(('fechaEvaluacColMed','tipo'),('fechaCeseActividad'),('memo'),)
             }),
         
 	        )
