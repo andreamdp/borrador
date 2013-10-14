@@ -39,10 +39,18 @@ class LocalidadAdmin(admin.ModelAdmin):
         
 class ResidenciaAdmin(admin.ModelAdmin):
   actions = [copiar_residencia, actualiza_a]  
+  
+  def getID(self,obj):
+        if obj.id is None:
+          return ''
+        else:
+	  return obj.id
+  getID.short_description = 'Número Interno'
+  readonly_fields = ("getID",) 
   list_display = ['id', 'a_Comienzo','institucion','especialidad','fechaEvaluacColMed','fechaCeseActividad'] 
   fieldsets = (
         (None,{
-            'fields':(('a_Comienzo'),('especialidad','institucion'))}),    
+            'fields':(('getID','a_Comienzo'),('especialidad','institucion'))}),    
         ('Cantidad Residentes', {
 	        'classes' : ('collapse closed',),            
                 'classes' : ('grp-collapse grp-open',),
