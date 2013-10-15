@@ -71,7 +71,7 @@ class ResidenciaAut(models.Model):
         ('M', 'Mixta'),
         
     )
-    expediente = PositiveSmallIntegerField('N° de Expediente del Ministerio de Salud (####-####-##)')
+    expediente =  models.CharField('N° de Expediente del Ministerio de Salud (####-####-##)',max_length=12)
     a_Comienzo =  PositiveSmallIntegerField('Año')
     especialidad = models.ForeignKey(Especialidad, related_name='+', null = True, blank = True)
     institucion =  models.ForeignKey('Institucion', related_name='+', null =  True, blank = True)
