@@ -50,7 +50,7 @@ class ResidenciaAdmin(admin.ModelAdmin):
   list_display = ['id', 'a_Comienzo','institucion','especialidad','fechaEvaluacColMed','fechaCeseActividad'] 
   fieldsets = (
         (None,{
-            'fields':(('getID','a_Comienzo'),('especialidad','institucion'))}),    
+            'fields':(('getID','expediente','a_Comienzo'),('especialidad','institucion'))}),    
         ('Cantidad Residentes', {
 	        'classes' : ('collapse closed',),            
                 'classes' : ('grp-collapse grp-open',),
