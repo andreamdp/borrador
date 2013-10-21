@@ -1,7 +1,8 @@
 {% extends "admin/base.html" %}
 {% load i18n %}
-
-{% block extrastyle %}{% load adminmedia %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/custom_admin.css" />{% endblock %}
+{% load admin_static %}
+<link href="{% static 'admin/css/base.css' %}" rel="stylesheet">
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/custom_admin.css" />{% endblock %}
 
 {% block title %}{{ title }} | {% trans 'Django site admin' %}{% endblock %}
 
@@ -32,7 +33,9 @@
                 <a href="">{{"Reportes"}}
                 <ul id="navmenu">
                  
-                 <li><a href="/../reporte/">{% trans "Listado de Residencias" %}</a></li>
+                 <li><a href="/../reporte/2012">{% trans "Listado de Residencias 2012" %}</a></li>
+                 <li><a href="/../reporte/2013">{% trans "Listado de Residencias 2013" %}</a></li>
+                  <li><a href="/../reporteA_evaluacion">{% trans "Residencias por Año de Evaluación" %}</a></li>
                </ul>
            </li>
         </ul>

@@ -3,7 +3,7 @@ from django.conf import settings
 from django.contrib import admin
 from aplicacion.views import *
 from aplicacion.forms import *
-from django.views.generic import list_detail, date_based, create_update
+#from django.views.generic import list_detail, date_based, create_update
 
 admin.autodiscover()
 
@@ -14,7 +14,10 @@ urlpatterns = patterns('',
     url(r'^admin/password_reset/done/$', 'django.contrib.auth.views.password_reset_done'),
     url(r'^reset/(?P<uidb36>[0-9A-Za-z]+)-(?P<token>.+)/$', 'django.contrib.auth.views.password_reset_confirm'),
     url(r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete'),
-    (r'^reporte/$', my_view),
+    (r'reporte/2012/$', residencias2012),
+    (r'reporte/2013/$', residencias2013),
+	(r'^reporteA_evaluacion/$',aEvaluacion),
+    
     url('', include(admin.site.urls)),
  #   (r'^basic-admin/', include(basic_site.urls)),
  #   (r'^advanced-admin/', include(advanced_site.urls)),

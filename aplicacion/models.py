@@ -71,7 +71,7 @@ class ResidenciaAut(models.Model):
         ('M', 'Mixta'),
         
     )
-    expediente =  models.CharField('N° de Expediente del Ministerio de Salud (####-####-##)',max_length=12, null = True, blank = True)
+    expediente =  models.CharField('N° de Expediente del Ministerio de Salud',max_length=12, null = True, blank = True, default='0-0-00',help_text='####-####-##')
     a_Comienzo =  PositiveSmallIntegerField('Año')
     especialidad = models.ForeignKey(Especialidad, related_name='+', null = True, blank = True)
     institucion =  models.ForeignKey('Institucion', related_name='+', null =  True, blank = True)
@@ -80,7 +80,7 @@ class ResidenciaAut(models.Model):
     cantA_3 = PositiveSmallIntegerField('3er. Año')
     cantA_4 = PositiveSmallIntegerField('4to. Año')
     jefeResidentes = PositiveSmallIntegerField('Jefe de Residentes')
-    fechaEvaluacColMed = DateField('Fecha de Evaluación', blank = True, null = True)
+    fechaEvaluacColMed = DateField('Fecha de Evaluación', blank = True, null = False)
     fechaEvaluacMixta = DateField('Fecha de Evaluación Mixta', blank = True, null = True)
     fechaCeseActividad = DateField('Fecha de Vencimiento Acreditación', blank = True, null = True)
     jefeServicio = models.CharField('Jefe de Servicio',max_length=50, blank = True, null = True)
@@ -94,7 +94,15 @@ class ResidenciaAut(models.Model):
     
     def __unicode__(self):
         return unicode(self.a_Comienzo)
-
+    
+    def fechaEvalNoNula(self):
+        if not self.fechaEvaluacColMed:
+            return ''
+        else:
+            return self.fechaEvaluacColMed.strftime("%d/%m/%Y")
+   
+    def sumaCantA(self):
+        return self.cantA_1+self.cantA_2+self.cantA_3+self.cantA_4
     
 from Colegio.geraldo import Report, DetailBand, ObjectValue
 from Colegio.geraldo.utils import cm
@@ -117,7 +125,7 @@ cur_dir = os.path.dirname(os.path.abspath(__file__))
 
 from django.contrib.auth.models import User
 
-from reportlab.lib.pagesizes import A4
+from reportlab.lib.pagesizes import A4, A5
 from reportlab.lib.units import cm
 from reportlab.lib.enums import TA_CENTER, TA_JUSTIFY, TA_RIGHT
 from reportlab.lib.colors import navy, yellow, red, black, blue, lawngreen
@@ -131,22 +139,14 @@ from reportlab.lib.pagesizes import legal
 from reportlab.lib.units import cm
 class UsersReport(Report):
     title = 'Listado' 
-   # page_size = landscape(legal)
+    page_size = landscape(A5)
     margin_left = 2*cm
     margin_top = 0.5*cm
     margin_right = 0.5*cm
     margin_bottom = 0.5*cm
     class band_page_header(ReportBand):
        # height = 1.3*cm
-        elements = [
-           # SystemField(expression='%(report_title)s', top=0.1*cm, left=0, width=BAND_WIDTH,
-            #    style={'fontName': 'Helvetica-Bold', 'fontSize': 14, 'alignment': TA_CENTER}),
-            Label(text="ID", top=0.8*cm, left=0),
-            Label(text="name", top=0.8*cm, left=3*cm),
-            Label(text="", top=0.8*cm, left=8*cm),
-            Label(text="", top=0.8*cm, left=13*cm),
-            Label(text="", top=0.8*cm, left=18*cm),
-        ]
+        
         borders = {'bottom': Line(stroke_color=navy)}
 
     class band_page_footer(ReportBand):
@@ -160,8 +160,8 @@ class UsersReport(Report):
         borders = {'top': Line(stroke_color=blue, stroke_width=1)}
 
     class band_detail(DetailBand):
-        #height=0.7*cm
+       # height=6*cm
         elements=[
-            ObjectValue(attribute_name='capitalize'),
+            ObjectValue( attribute_name='capitalize', spaceBefore=30),
             ]
 
