@@ -152,7 +152,7 @@ class UsersReport(Report):
     class band_page_footer(ReportBand):
         #height = 0.4*cm
         elements = [
-            Label(text='Colmed IX - Sistema de Residencias', top=0.1*cm,
+            Label(text='Colmed IX - Sistema de Residencias', top=0.1*cm
                 right=0),
             SystemField(expression='%(now:%d de %b %Y)s', top=0.1*cm,
                 width=BAND_WIDTH, style={'alignment': TA_RIGHT}),
