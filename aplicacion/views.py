@@ -127,7 +127,7 @@ class r_AEval(UsersReport):
         borders = {'bottom': Line(stroke_color=red, stroke_width=1)}
     
     class band_detail(DetailBand):
-        form = ResidenciaForm
+        
         height=0.7*cm
         elements=[
           
