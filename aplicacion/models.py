@@ -154,7 +154,7 @@ class UsersReport(Report):
         elements = [
             Label(text='Colmed IX - Sistema de Residencias', top=0.1*cm,
                 right=0),
-            SystemField(expression='%(now:%Y, %b %d)s', top=0.1*cm,
+            SystemField(expression='%(now:%d de %b %Y)s', top=0.1*cm,
                 width=BAND_WIDTH, style={'alignment': TA_RIGHT}),
         ]
         borders = {'top': Line(stroke_color=blue, stroke_width=1)}
