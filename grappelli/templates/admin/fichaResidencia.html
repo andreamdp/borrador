@@ -1,9 +1,4 @@
-{% extends "admin/base.html" %}
-{% load i18n %}
-{% load admin_static %}
-<link href="{% static 'admin/css/base.css' %}" rel="stylesheet">
-{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/custom_admin.css" />{% endblock %}
-
+{% load admin_static %}{% load url from future %}{% load i18n grp_tags %}
 <style>
 body {
     margin: 0;
