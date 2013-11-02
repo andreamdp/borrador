@@ -5,3 +5,4 @@ geraldo==0.4.16
 South==0.7
 pisa==3.0.33
 html5lib==0.90
+pyPdf==1.10
