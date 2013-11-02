@@ -1,0 +1,86 @@
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    font-family:Arial;
+    color: #333;
+    background: #fff;
+}
+
+table {
+    border-collapse: collapse;
+    border-color: #ccc;
+}
+
+td, th {
+    font-size: 11px;
+    line-height: 13px;
+    border-bottom: 2px solid #eee;
+    border-top: 2px solid #eee;
+    border-left: 2px solid #eee;
+    border-right: 2px solid #eee;
+    vertical-align: top;
+    padding: 5px;
+    font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+}
+titulo{
+	font-size:8;
+	font-weight: bold;
+	font-family:Arial;
+	}
+titulo2{
+	font-size:10;
+	font-weight: bold;
+	font-family:Arial;
+	}
+
+</style>
+
+
+{% block title %}{{ title }}Sistema de Residencias IX° Distrito {% endblock %}
+{% block branding %}
+<h1 id="site-name"> Ficha de Residencia</h1>
+{% endblock %}
+{% block navmenu %}
+   
+{% endblock %}
+{% block content %}
+<tr><table width= 100% >
+
+	<td width=50%><titulo>N° de Expediente del Ministerio de Salud: </titulo>{{residencia.expediente}}</td>
+	<td width=50%><titulo>Año: </titulo>{{residencia.a_Comienzo}}</td>
+
+</tr>
+
+<tr>
+<td width=50%><titulo>Especialidad: </titulo>{{residencia.especialidad}}</td>
+<td width=50%><titulo>Institución: </titulo> {{residencia.institucion}}</td>
+
+</tr>
+
+<tr><td><titulo>1° Año: </titulo> {{residencia.cantA_1}}</td><td><titulo>2° Año: </titulo> {{residencia.cantA_2}} </td></tr>
+</table>
+<table width=100%>
+<tr><td width=33%><titulo>3° Año: </titulo>{{residencia.cantA_3}}</td><td width=33%><titulo> 4° Año: </titulo>{{residencia.cantA_4}} </td><td width=34%><titulo>Jefe de Residentes: </titulo> {{residencia.jefeResidentes}}</td></tr></table>
+<br>
+<table width=100%>
+<tr><td width=100%><titulo2>Profesionales</titulo2></td></tr>
+</table>
+<table>
+<tr><td width=50%><titulo>Jefe de Servicio: </titulo> {{residencia.jefeServicio}}</td>
+<td width=50%><titulo>Coordinador: </titulo> {{residencia.coordinador}}</td></tr>
+<tr width=100%><td width=100%><titulo>Asesor Docente: </titulo> {{residencia.asesorDocente}}</td><td></td></tr>
+</table>
+<br>
+<table width=100%>
+<tr><td width=100%><titulo2>Evaluaciones</titulo2></td></tr></table>
+<table>
+<tr><td width=30%><titulo>Fecha de Evaluación: </titulo> {{residencia.fechaEvalNoNula}}</td>
+<td width=30%><titulo>Tipo: </titulo> {{residencia.nombreTipo}}</td>
+<td width=40%><titulo>Fecha de Vencimiento Acreditación: </titulo> {{residencia.fechaCeseActividadNoNula}}</td></tr>
+</table><br>
+<table width=100%>
+<tr><td>{{residencia.memoNoNulo}} </td></tr>
+</table>
+{% endblock %}
