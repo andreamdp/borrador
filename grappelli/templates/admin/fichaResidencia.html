@@ -35,7 +35,21 @@ titulo2{
 	font-weight: bold;
 	font-family:Arial;
 	}
-
+#parent {
+    overflow: hidden;
+    border: 1px solid red
+}
+.right {
+    float: right;
+    width: 100px;
+    height: 100px;
+    background: #888;
+}
+.left {
+    overflow: hidden;
+    height: 100px;
+    background: #ccc
+}
 </style>
 
 
@@ -63,16 +77,12 @@ titulo2{
             <div id="grp-content-container">
                {% block content %}
 <table>
-<tr>
-<div style="width:50%;border-left:medium #CC0000 solid; border-top:medium #CC0000 solid;
-border-right:medium #CC0000 solid;border-bottom:medium #CC0000 solid;
-position:left; left:150px; height:300px;" />
+<div id="parent">
+<div class="right" />
 	<titulo>Nro. de Expediente del Ministerio de Salud: </titulo>{{residencia.expediente}}</div>
-	<div style="border-left:medium #CC0000 solid; border-top:medium #CC0000 solid;
-border-right:medium #CC0000 solid;border-bottom:medium #CC0000 solid;
-position:right; left:150px; height:300px;" /><titulo>Año: </titulo>{{residencia.a_Comienzo}}</div>
+	<div class="left" /><titulo>Año: </titulo>{{residencia.a_Comienzo}}</div>
 
-</tr>
+</div>
 
 <tr>
 <div><div style="border-left:medium #CC0000 solid; border-top:medium #CC0000 solid;
