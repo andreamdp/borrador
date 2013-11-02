@@ -71,7 +71,7 @@ class ResidenciaAut(models.Model):
         ('M', 'Mixta'),
         
     )
-    expediente =  models.CharField('N° de Expediente del Ministerio de Salud',max_length=12, null = True, blank = True, default='0-0-00',help_text='####-####-##')
+    expediente =  models.CharField('N° de Expediente del Ministerio de Salud',max_length=12, null = True, blank = True, default='0-0-00',help_text='####-####/##')
     a_Comienzo =  PositiveSmallIntegerField('Año')
     especialidad = models.ForeignKey(Especialidad, related_name='+', null = True, blank = True)
     institucion =  models.ForeignKey('Institucion', related_name='+', null =  True, blank = True)
@@ -114,7 +114,7 @@ class ResidenciaAut(models.Model):
         if self.tipo == 'C':
             return 'Colegio'
         else:
-            return 'Mixto'  
+            return 'Mixto'      
     def sumaCantA(self):
         return self.cantA_1+self.cantA_2+self.cantA_3+self.cantA_4
     

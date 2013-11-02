@@ -19,6 +19,15 @@ def copiar_residencia(modeladmin, request, queryset):
     
 copiar_residencia.short_description = 'Copiar Residencias seleccionadas'
 
+from django import forms
+
+class ResidenciaForm(forms.ModelForm):
+    exp = forms.CharField(initial="",max_length=12, min_length=12,
+    widget=forms.TextInput(attrs={'placeholder':'0000-0000/00'}))
+
+    class Meta:
+        model = ResidenciaAut
+
 def actualiza_a(self, request, queryset):
         rows_updated =  queryset.update(a_Comienzo='2013')
         if rows_updated == 1:
@@ -39,7 +48,7 @@ class LocalidadAdmin(admin.ModelAdmin):
         
 class ResidenciaAdmin(admin.ModelAdmin):
   actions = [copiar_residencia, actualiza_a]  
-  
+  form = ResidenciaForm
   def getID(self,obj):
         if obj.id is None:
           return ''
@@ -50,7 +59,7 @@ class ResidenciaAdmin(admin.ModelAdmin):
   list_display = ['id', 'a_Comienzo','institucion','especialidad','fechaEvaluacColMed','fechaCeseActividad'] 
   fieldsets = (
         (None,{
-            'fields':(('getID','expediente','a_Comienzo'),('especialidad','institucion'))}),    
+            'fields':(('getID','exp','expediente','a_Comienzo'),('especialidad','institucion'))}),    
         ('Cantidad Residentes', {
 	        'classes' : ('collapse closed',),            
                 'classes' : ('grp-collapse grp-open',),
