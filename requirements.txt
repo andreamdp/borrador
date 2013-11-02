@@ -4,3 +4,4 @@ dj-database-url==0.2.1
 geraldo==0.4.16
 South==0.7
 pisa==3.0.33
+html5lib==0.90
