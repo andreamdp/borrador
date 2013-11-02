@@ -6,3 +6,4 @@ South==0.7
 pisa==3.0.33
 html5lib==0.90
 pyPdf==1.10
+PIL==1.1.7 
