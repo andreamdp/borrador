@@ -71,7 +71,7 @@ class ResidenciaAut(models.Model):
         ('M', 'Mixta'),
         
     )
-    expediente =  models.CharField('N° de Expediente del Ministerio de Salud',max_length=12, null = True, blank = True, default='0-0-00',help_text='####-####-##')
+    expediente =  models.CharField('N° de Expediente del Ministerio de Salud',max_length=12, null = True, blank = True, default='0-0-00',help_text='####-####/##')
     a_Comienzo =  PositiveSmallIntegerField('Año')
     especialidad = models.ForeignKey(Especialidad, related_name='+', null = True, blank = True)
     institucion =  models.ForeignKey('Institucion', related_name='+', null =  True, blank = True)
@@ -100,7 +100,21 @@ class ResidenciaAut(models.Model):
             return ''
         else:
             return self.fechaEvaluacColMed.strftime("%d/%m/%Y")
-   
+    def fechaCeseActividadNoNula(self):
+        if not self.fechaCeseActividad:
+            return ''
+        else:
+            return self.fechaCeseActividad.strftime("%d/%m/%Y")
+    def memoNoNulo(self):
+        if not self.memo:
+            return '.'
+        else:
+            return self.memo
+    def nombreTipo(self):
+        if self.tipo == 'C':
+            return 'Colegio'
+        else:
+            return 'Mixto'      
     def sumaCantA(self):
         return self.cantA_1+self.cantA_2+self.cantA_3+self.cantA_4
     
@@ -152,7 +166,7 @@ class UsersReport(Report):
     class band_page_footer(ReportBand):
         #height = 0.4*cm
         elements = [
-            Label(text='Colmed IX - Sistema de Residencias', top=0.1*cm
+            Label(text='Colmed IX - Sistema de Residencias', top=0.1*cm,
                 right=0),
             SystemField(expression='%(now:%d de %b %Y)s', top=0.1*cm,
                 width=BAND_WIDTH, style={'alignment': TA_RIGHT}),
