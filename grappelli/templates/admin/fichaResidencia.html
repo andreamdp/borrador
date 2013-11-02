@@ -1,4 +1,6 @@
-{% extends "admin/base.html" %}
+<link href="{% static 'admin/css/base.css' %}" rel="stylesheet">
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}css/custom_admin.css" />{% endblock %}
+
 
 <style>
 body {
