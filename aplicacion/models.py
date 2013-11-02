@@ -100,7 +100,21 @@ class ResidenciaAut(models.Model):
             return ''
         else:
             return self.fechaEvaluacColMed.strftime("%d/%m/%Y")
-   
+    def fechaCeseActividadNoNula(self):
+        if not self.fechaCeseActividad:
+            return ''
+        else:
+            return self.fechaCeseActividad.strftime("%d/%m/%Y")
+    def memoNoNulo(self):
+        if not self.memo:
+            return '.'
+        else:
+            return self.memo
+    def nombreTipo(self):
+        if self.tipo == 'C':
+            return 'Colegio'
+        else:
+            return 'Mixto'  
     def sumaCantA(self):
         return self.cantA_1+self.cantA_2+self.cantA_3+self.cantA_4
     
