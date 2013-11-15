@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.generic import ListView
 from aplicacion.models import *
 from django.forms.models import inlineformset_factory
-from reportlab.lib.colors import navy, yellow, red, black, blue, purple, green, darkgreen
+from reportlab.lib.colors import navy, yellow, red, black, blue, purple, green, darkgreen, lightblue
 from django.http import HttpResponse
 from geraldo import Report, DetailBand, ObjectValue
 from geraldo.generators import PDFGenerator
