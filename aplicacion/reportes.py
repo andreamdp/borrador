@@ -57,8 +57,7 @@ class ReportGrupoInst(Report):
                     ObjectValue(attribute_name='Institucion', left=1, top=0.1*cm, width=20*cm,
                         get_value=lambda instance: 'Institucion: ' + (instance.institucion.nombre),
                         style={'fontName': 'Helvetica-Bold', 'fontSize': 12}),
-                    ObjectValue(attribute_name='id', action=FIELD_ACTION_COUNT,
-                       display_format='%s staffs', left=15*cm, top=0.1*cm)
+                   
                    # ObjectValue(attribute_name='especialidad', action=FIELD_ACTION_COUNT,
                    #     display_format='%s ', left=15*cm, top=0.1*cm,style={'fontName': 'Helvetica-Bold', 'fontSize': 12})
                    
@@ -69,7 +68,7 @@ class ReportGrupoInst(Report):
                 height=0.7*cm,
                 elements=[
                     ObjectValue(attribute_name='id', action=FIELD_ACTION_COUNT,
-                        display_format='%s staffs', left=0.5*cm, top=0.1*cm)
+                        display_format='%s en ' +(instance.institucion.nombre), left=0.5*cm, top=0.1*cm)
                 ],
                 borders={'top': True},
             ),
