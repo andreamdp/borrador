@@ -12,7 +12,7 @@ from django.contrib.auth.models import User
 from aplicacion.admin import *
 from django.core.exceptions import PermissionDenied
 from reportlab.lib.pagesizes import legal, A5
-
+from aplicacion.reportes import *
 def edit(request, pk):
     if not request.user.is_staff:
         raise PermissionDenied
@@ -148,3 +148,17 @@ def aEvaluacion(request):
 
     return response
 
+
+       
+def grupos(request,residenciaaut_a_Comienzo):
+  
+    response = HttpResponse(mimetype='application/pdf')
+    objects_list = ResidenciaAut.objects.filter(a_Comienzo=residenciaaut_a_Comienzo).order_by('institucion','especialidad',)  
+    if residenciaaut_a_Comienzo=='2012':
+        report = ReportGrupoInst2012(queryset=objects_list)
+    else:
+        report = ReportGrupoInst2013(queryset=objects_list )
+
+    report.generate_by(PDFGenerator, filename=response)
+
+    return response

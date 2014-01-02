@@ -17,9 +17,10 @@ urlpatterns = patterns('',
     url(r'^reset/done/$', 'django.contrib.auth.views.password_reset_complete'),
  #   url('(?P<residenciaaut_id>\d+)/ficha/$', libro_pdf),
     url(r'(?P<residenciaaut_id>\d+)/ficha/$', reporteFicha),
-    (r'reporte/2012/$', residencias2012),
+    (r'reporte/2012/$',residencias2012 ),#residencias2012
     (r'reporte/2013/$', residencias2013),
-	(r'^reporteA_evaluacion/$',aEvaluacion),
+    (r'reporte/2013/$', residencias2013),
+    (r'^grupoInst/(?P<residenciaaut_a_Comienzo>\d+)$',grupos),
     
     url('', include(admin.site.urls)),
  #   (r'^basic-admin/', include(basic_site.urls)),
