@@ -66,10 +66,11 @@ class ReportGrupoInst(Report):
             band_footer=ReportBand(
                 height=0.7*cm,
                 elements=[
-                  
+                    ObjectValue(attribute_name='id', action=FIELD_ACTION_COUNT,
+                        display_format='%s staffs', left=0.5*cm, top=0.1*cm)
                 ],
-               # borders={'top': True},
-            )
+                borders={'top': True},
+            ),
                         
          ),
         ReportGroup(attribute_name = 'especialidad',
@@ -86,14 +87,7 @@ class ReportGrupoInst(Report):
                     ],
                 borders = {'bottom': True},
                 ),
-            band_footer=ReportBand(
-                height=0.7*cm,
-                elements=[
-                    ObjectValue(attribute_name='id', action=FIELD_ACTION_COUNT,
-                        display_format='%s staffs', left=0.5*cm, top=0.1*cm)
-                ],
-                borders={'top': True},
-            ),
+            
                         
          ),
         ]
