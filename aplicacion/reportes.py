@@ -68,7 +68,7 @@ class ReportGrupoInst(Report):
                 height=0.7*cm,
                 elements=[
                     ObjectValue(attribute_name='id', action=FIELD_ACTION_COUNT,
-                        display_format='Total por Inst.: %s' , left=0.5*cm, top=0.1*cm,style={'fontName': 'Helvetica-Bold', 'fontSize': 12})
+                        display_format='Total por Inst.: %s' , left=15*cm, top=0.1*cm,style={'fontName': 'Helvetica-Bold-Italic', 'fontSize': 10.5})
                 ],
                 borders={'top': True, 'left':True, 'right':True,'bottom':True},
             ),
