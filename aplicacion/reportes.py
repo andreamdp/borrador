@@ -68,7 +68,7 @@ class ReportGrupoInst(Report):
                 height=0.7*cm,
                 elements=[
                     ObjectValue(attribute_name='id', action=FIELD_ACTION_COUNT,
-                        display_format='Total por Institución: %s' , left=0.5*cm, top=0.1*cm)
+                        display_format='Total por Inst.: %s' , left=0.5*cm, top=0.1*cm)
                 ],
                 borders={'top': True},
             ),
