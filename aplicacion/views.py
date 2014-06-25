@@ -2,6 +2,10 @@
 from django.http import HttpResponse
 from django.views.generic import ListView
 from aplicacion.models import *
+from aplicacion.reportes import *
+from aplicacion.admin import *
+from aplicacion.forms import ResidenteForm1,ResidenteForm2,ResidenteForm3,ResidenteForm4
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.forms.models import inlineformset_factory
 from reportlab.lib.colors import navy, yellow, red, black, blue, purple, green, darkgreen, lightblue
 from django.http import HttpResponse
@@ -9,13 +13,87 @@ from geraldo import Report, DetailBand, ObjectValue
 from geraldo.generators import PDFGenerator
 from Colegio.geraldo.utils import cm
 from django.contrib.auth.models import User
-from aplicacion.admin import *
 from django.core.exceptions import PermissionDenied
 from reportlab.lib.pagesizes import legal, A5
-from aplicacion.reportes import *
+from django.views.decorators.csrf import csrf_protect
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+from django.http import Http404
 def edit(request, pk):
     if not request.user.is_staff:
         raise PermissionDenied
+
+#residenciaaut_id,
+def residente_list(request,residenciaaut_id,template_name='aplicacion/residente/list.html' ):
+    residentes_list = Residente.active.filter(residencia_id=residenciaaut_id).order_by('tipoR')
+    paginator = Paginator(residentes_list,  6)
+    page = request.GET.get('page')
+    try:
+        residentes = paginator.page(page)
+    except PageNotAnInteger:
+        residentes = paginator.page(1)
+    except EmptyPage:
+        residentes = paginator.page(paginator.num_pages)
+    return render_to_response(template_name, {
+        'residentes': residentes,
+        'idR:': request.user.is_authenticated()
+      #  'paginator': paginator,
+      #  'page': page,
+    })
+from django.shortcuts import redirect
+from django import template
+register = template.Library()  
+@csrf_protect
+@register.inclusion_tag('aplicacion/residente/add.html', takes_context=True)
+def residente_add1(request, residenciaaut_id,form_class=ResidenteForm1, template_name='aplicacion/residente/add.html'):#,idRe
+    if request.POST:
+        form = form_class(request.POST)
+        if form.is_valid():
+            residente = form.save()
+          
+            return redirect('residente_list',residenciaaut_id)
+            
+    else:
+       form = ResidenteForm1(initial={'residencia': residenciaaut_id})
+      
+    return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))
+
+
+@csrf_protect
+#@register.inclusion_tag('aplicacion/residente/add.html', takes_context=True)
+def residente_add2(request, residenciaaut_id,form_class=ResidenteForm2, template_name='aplicacion/residente/add.html'):#,idRe
+    if request.POST:
+        form = form_class(request.POST)
+        if form.is_valid():
+            residente = form.save()
+            return redirect('residente_list',residenciaaut_id)
+    else:
+       form = ResidenteForm2(initial={'residencia': residenciaaut_id})
+    return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))   
+@csrf_protect
+#@register.inclusion_tag('aplicacion/residente/add.html', takes_context=True)
+def residente_add3(request, residenciaaut_id,form_class=ResidenteForm3, template_name='aplicacion/residente/add.html'):#,idRe
+    if request.POST:
+        form = form_class(request.POST)
+        if form.is_valid():
+            residente = form.save()
+            return redirect('residente_list',residenciaaut_id)
+    else:
+       form = ResidenteForm3(initial={'residencia': residenciaaut_id})
+    return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))
+@csrf_protect
+#@register.inclusion_tag('aplicacion/residente/add.html', takes_context=True)
+def residente_add4(request, residenciaaut_id,form_class=ResidenteForm4, template_name='aplicacion/residente/add.html'):#,idRe
+    if request.POST:
+        form = form_class(request.POST)
+        if form.is_valid():
+            residente = form.save()
+            return redirect('residente_list',residenciaaut_id)
+    else:
+       form = ResidenteForm4(initial={'residencia': residenciaaut_id})
+    return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))
 
 
 class MyReport(UsersReport):

@@ -96,7 +96,8 @@ class ResidenciaAut(models.Model):
     def __unicode__(self):
         return unicode(self.a_Comienzo)
 
-    
+
+   
 from Colegio.geraldo import Report, DetailBand, ObjectValue
 from Colegio.geraldo.utils import cm
 from Colegio.geraldo.generators import PDFGenerator

@@ -1,5 +1,7 @@
 # -*- encoding: utf-8 -*-
 # Django settings for Colegio project.
+
+
 import os
 PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 DEBUG = True
@@ -17,7 +19,7 @@ MANAGERS = ADMINS
 #GRAPPELLI_ADMIN_TITLE = 'Residencias - Colmed IX'
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'newdb',#Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
@@ -110,6 +112,8 @@ TEMPLATE_DIRS = (
      "grappelli/templates/admin",
      #"c:/solanaABM012/templates",
 )
+
+
 TEMPLATE_CONTEXT_PROCESSORS = (
                 'django.contrib.auth.context_processors.auth',
                 'django.core.context_processors.request', 
@@ -176,5 +180,5 @@ LOGGING = {
     }
 }
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()

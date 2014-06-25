@@ -47,6 +47,8 @@ class LocalidadAdmin(admin.ModelAdmin):
         list_display = ['id','nombre']
         
 class ResidenciaAdmin(admin.ModelAdmin):
+  change_form_template = 'admin/aplicacion/residenciaaut/change_form.html'
+  add_form_template = 'admin/change_form.html'
   actions = [copiar_residencia, actualiza_a]  
  # form = ResidenciaForm
   def getID(self,obj):
@@ -86,6 +88,6 @@ admin.site.register(Especialidad, EspecialidadAdmin)
 admin.site.register(Institucion, InstitucionAdmin)
 admin.site.register(Localidad, LocalidadAdmin)
 admin.site.register(ResidenciaAut, ResidenciaAdmin)
-#admin.site.register(Profesional)
+admin.site.register(Residente)
 
 

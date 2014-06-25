@@ -1,0 +1,65 @@
+
+{% extends 'base.html' %}
+
+{% block page_title %}Lista de Residentes{% endblock %}
+
+{% block content %}
+    <h2> Listado de Residentes</h2>
+    
+    
+    <table class="report_table">
+        <thead>
+            <tr>
+                <th>Residentes</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                 <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if residentes %}
+            <tr class="{% cycle odd,even %}">
+						<td>Nombre</td><td>Apellido</td><td>Año de Comienzo</td><td>Año Residencia</td>   </tr>
+					<tr>
+            {% for residente in residentes %}
+						
+                        <td>{{ residente.nombre }}</td>                        <td>{{ residente.apellido }}</td>
+                      <td>{{ residente.residencia }}</td>   <td>{{ residente.tipoR }}</td>  
+</tr>
+                 
+             {% endfor %}
+        {% endif %}
+		<div class="pagination">
+		<span class="step-links">
+        {% if residentes.has_previous %}
+            <a href="?page={{ residentes.previous_page_number }}">previo</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ residentes.number }} of {{ residentes.paginator.num_pages }}.
+        </span>
+
+        {% if residentes.has_next %}
+            <a href="?page={{ residentes.next_page_number }}">Siguiente</a>
+        {% endif %}
+    </span>
+
+</div>
+
+   
+{% endblock %}
+ 
+<div>
+
+
+ {% block footer %}
+  
+   <p>
+       <b> Atrás:</b> <a href="javascript:history.go(-2)">Volver </a>
+    </p>
+   
+  
+  
+  {% endblock %}
+
+</div>
