@@ -117,7 +117,18 @@ class ResidenciaAut(models.Model):
             return 'Mixto'      
     def sumaCantA(self):
         return self.cantA_1+self.cantA_2+self.cantA_3+self.cantA_4
-    
+
+class ResidenteManager(models.Manager):
+    def most_current_for_date(self, date):
+        return super(ResidenteManager, self).get_query_set()
+            
+class Residente(models.Model):    
+   nombre = models.CharField(max_length=50)
+   apellido = models.CharField(max_length=50)
+   tipoR = models.IntegerField()   
+   residencia= models.ForeignKey(ResidenciaAut, related_name='+') 
+   active = ResidenteManager()
+       
 from Colegio.geraldo import Report, DetailBand, ObjectValue
 from Colegio.geraldo.utils import cm
 from Colegio.geraldo.generators import PDFGenerator
