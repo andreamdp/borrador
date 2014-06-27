@@ -19,8 +19,14 @@ urlpatterns = patterns('',
     url(r'(?P<residenciaaut_id>\d+)/ficha/$', reporteFicha),
     (r'reporte/2012/$',residencias2012 ),#residencias2012
     (r'reporte/2013/$', residencias2013),
-    (r'reporte/2013/$', residencias2013),
+    (r'reporte/2014/$', residencias2014),
     (r'^grupoInst/(?P<residenciaaut_a_Comienzo>\d+)$',grupos),
+    (r'(?P<residenciaaut_id>\d+)/residente1/$', residente_add1),
+    (r'(?P<residenciaaut_id>\d+)/residente2/$', residente_add2),
+    (r'(?P<residenciaaut_id>\d+)/residente3/$', residente_add3),
+    (r'(?P<residenciaaut_id>\d+)/residente4/$', residente_add4),
+   
+    url(r'(?P<residenciaaut_id>\d+)/lista/$', residente_list,name='residente_list'),
     
     url('', include(admin.site.urls)),
  #   (r'^basic-admin/', include(basic_site.urls)),
