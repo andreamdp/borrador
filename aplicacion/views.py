@@ -108,6 +108,15 @@ def residencias2013(request):
     report.generate_by(PDFGenerator, filename=response)
 
     return response
+    
+def residencias2014(request):
+    response = HttpResponse(mimetype='application/pdf')
+    objects_list = ResidenciaAut.objects.filter(a_Comienzo=2014).order_by('a_Comienzo','institucion') 
+    report = MyReport(queryset=objects_list)
+    
+    report.generate_by(PDFGenerator, filename=response)
+
+    return response
 class r_AEval(UsersReport):
     title = 'Listado de Residencias por Año de Evaluación'
     page_size = landscape(legal)
