@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Budget List{% endblock %}
+
+{% block content %}
+    <h2> Listado de Residentes</h2>
+    
+    <p>
+        <a href="{% url budget_budget_add %}">Add A Residente</a>
+    </p>
+    
+    
+    <table class="report_table">
+        <thead>
+            <tr>
+                <th>Residentes</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if residentes %}
+                {% for residente in residentes %}
+                    <tr class="{% cycle odd,even %}">
+                        <td>{{ residente.nombre }}</td>                        <td>{{ residente.apellido }}</td>
+                        <td><a href="{% url budget_estimate_list budget.slug %}">View/Add Estimates</a></td>
+                        <td><a href="{% url budget_budget_edit budget.slug %}">Edit Budget</a></td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">No se encontraron residentes.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+    
+    {% include 'budget/pagination.html' %}
+{% endblock %}
