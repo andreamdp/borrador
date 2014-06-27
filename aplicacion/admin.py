@@ -48,6 +48,8 @@ class LocalidadAdmin(admin.ModelAdmin):
         
 class ResidenciaAdmin(admin.ModelAdmin):
   actions = [copiar_residencia, actualiza_a]  
+  change_form_template = 'admin/change_form.html'#'admin/aplicacion/residenciaaut/change_form.html'
+  add_form_template = 'admin/change_form.html'
  # form = ResidenciaForm
   def getID(self,obj):
         if obj.id is None:
