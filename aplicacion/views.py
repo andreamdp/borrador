@@ -19,6 +19,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.http import Http404
 from aplicacion.reportes import *
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def edit(request, pk):
     if not request.user.is_staff:
         raise PermissionDenied
