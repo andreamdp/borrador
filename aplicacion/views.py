@@ -199,7 +199,7 @@ from django import template
 register = template.Library()  
 @csrf_protect
 @register.inclusion_tag('aplicacion/residente/add.html', takes_context=True)
-def residente_add1(request, residenciaaut_id,form_class=ResidenteForm1, template_name='aplicacion/residente/add.html'):#,idRe
+def residente_add1(request, residenciaaut_id,form_class=ResidenteForm1, template_name='aplicacion/residente/add.html'):
     if request.POST:
         form = form_class(request.POST)
         if form.is_valid():
@@ -215,7 +215,7 @@ def residente_add1(request, residenciaaut_id,form_class=ResidenteForm1, template
 
 @csrf_protect
 #@register.inclusion_tag('aplicacion/residente/add.html', takes_context=True)
-def residente_add2(request, residenciaaut_id,form_class=ResidenteForm2, template_name='aplicacion/residente/add.html'):#,idRe
+def residente_add2(request, residenciaaut_id,form_class=ResidenteForm2, template_name='aplicacion/residente/add.html'):
     if request.POST:
         form = form_class(request.POST)
         if form.is_valid():
@@ -225,8 +225,8 @@ def residente_add2(request, residenciaaut_id,form_class=ResidenteForm2, template
        form = ResidenteForm2(initial={'residencia': residenciaaut_id})
     return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))   
 @csrf_protect
-#@register.inclusion_tag('aplicacion/residente/add.html', takes_context=True)
-def residente_add3(request, residenciaaut_id,form_class=ResidenteForm3, template_name='aplicacion/residente/add.html'):#,idRe
+
+def residente_add3(request, residenciaaut_id,form_class=ResidenteForm3, template_name='aplicacion/residente/add.html'):
     if request.POST:
         form = form_class(request.POST)
         if form.is_valid():
@@ -236,8 +236,8 @@ def residente_add3(request, residenciaaut_id,form_class=ResidenteForm3, template
        form = ResidenteForm3(initial={'residencia': residenciaaut_id})
     return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))
 @csrf_protect
-#@register.inclusion_tag('aplicacion/residente/add.html', takes_context=True)
-def residente_add4(request, residenciaaut_id,form_class=ResidenteForm4, template_name='aplicacion/residente/add.html'):#,idRe
+
+def residente_add4(request, residenciaaut_id,form_class=ResidenteForm4, template_name='aplicacion/residente/add.html'):
     if request.POST:
         form = form_class(request.POST)
         if form.is_valid():
@@ -246,3 +246,14 @@ def residente_add4(request, residenciaaut_id,form_class=ResidenteForm4, template
     else:
        form = ResidenteForm4(initial={'residencia': residenciaaut_id})
     return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))
+
+@csrf_protect
+def jefeResidente_add(request, residenciaaut_id,form_class=JefeResidenteForm, template_name='aplicacion/residente/add.html'):
+    if request.POST:
+        form = form_class(request.POST)
+        if form.is_valid():
+            residente = form.save()
+            return redirect('residente_list',residenciaaut_id)
+    else:
+       form = JefeResidenteForm(initial={'residencia': residenciaaut_id})
+    return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))   

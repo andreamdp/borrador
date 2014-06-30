@@ -7,7 +7,7 @@ class ResidenteForm1(forms.ModelForm):
         instance = getattr(self, 'instance', None)
         self.fields['residencia'].widget.attrs['disabled'] = 'disabled'
         self.fields['residencia'].widget = forms.HiddenInput()
-        #self.fields['tipoR'].widget = forms.HiddenInput()
+        self.fields['tipoR'].widget = forms.HiddenInput()
     class Meta:
         model =  Residente  
         fields = ('nombre', 'apellido','residencia')
@@ -23,7 +23,7 @@ class ResidenteForm2(forms.ModelForm):
         instance = getattr(self, 'instance', None)
         self.fields['residencia'].widget.attrs['disabled'] = 'disabled'
         self.fields['residencia'].widget = forms.HiddenInput()
-        #self.fields['tipoR'].widget = forms.HiddenInput()
+        self.fields['tipoR'].widget = forms.HiddenInput()
     class Meta:
         model =  Residente  
         fields = ('nombre', 'apellido','residencia')
@@ -39,7 +39,7 @@ class ResidenteForm3(forms.ModelForm):
         instance = getattr(self, 'instance', None)
         self.fields['residencia'].widget.attrs['disabled'] = 'disabled'
         self.fields['residencia'].widget = forms.HiddenInput()
-        #self.fields['tipoR'].widget = forms.HiddenInput()
+        self.fields['tipoR'].widget = forms.HiddenInput()
     class Meta:
         model =  Residente  
         fields = ('nombre', 'apellido','residencia')
@@ -55,7 +55,7 @@ class ResidenteForm4(forms.ModelForm):
         instance = getattr(self, 'instance', None)
         self.fields['residencia'].widget.attrs['disabled'] = 'disabled'
         self.fields['residencia'].widget = forms.HiddenInput()
-        #self.fields['tipoR'].widget = forms.HiddenInput()
+        self.fields['tipoR'].widget = forms.HiddenInput()
     class Meta:
         model =  Residente  
         fields = ('nombre', 'apellido','residencia')
@@ -64,3 +64,18 @@ class ResidenteForm4(forms.ModelForm):
         self.instance.tipoR = 4
         super(ResidenteForm4, self).save()
 
+class JefeResidenteForm(forms.ModelForm):
+    tipoR = forms.IntegerField(initial=5, required=True)
+    def __init__(self, *args, **kwargs):
+        super(JefeResidenteForm, self).__init__(*args, **kwargs)
+        instance = getattr(self, 'instance', None)
+        self.fields['residencia'].widget.attrs['disabled'] = 'disabled'
+        self.fields['residencia'].widget = forms.HiddenInput()
+        self.fields['tipoR'].widget = forms.HiddenInput()
+    class Meta:
+        model =  Residente  
+        fields = ('nombre', 'apellido','residencia')
+        exclude=('tipoR',)
+    def save(self):
+        self.instance.tipoR = 5
+        super(JefeResidenteForm, self).save()
