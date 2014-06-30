@@ -178,7 +178,7 @@ def grupos(request,residenciaaut_a_Comienzo):
 
     return response
 
-def residente_list(request,residenciaaut_id,template_name='list.html' ):
+def residente_list(request,residenciaaut_id,template_name='aplicacion/residente/list.html' ):
     residentes_list = Residente.active.filter(residencia_id=residenciaaut_id).order_by('tipoR')
     paginator = Paginator(residentes_list,  6)
     page = request.GET.get('page')
