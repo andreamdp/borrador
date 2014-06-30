@@ -21,7 +21,7 @@
 						<td>Nombre</td><td>Apellido</td><td>Año de Comienzo</td><td>Año Residencia</td>   </tr>
 					<tr>
             {% for residente in residentes %}
-						
+				<a href="/residente_edit/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_changelink.gif " />  </a>       <b><a href="/residente_delete/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_deletelink.gif" />  </a></b> </td> 		
                         <td>{{ residente.nombre }}</td>                        <td>{{ residente.apellido }}</td>
                       <td>{{ residente.residencia }}</td>   <td>{{ residente.tipoR }}</td>  
 </tr>
