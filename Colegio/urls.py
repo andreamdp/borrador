@@ -25,7 +25,7 @@ urlpatterns = patterns('',
     (r'(?P<residenciaaut_id>\d+)/residente2/$', residente_add2),
     (r'(?P<residenciaaut_id>\d+)/residente3/$', residente_add3),
     (r'(?P<residenciaaut_id>\d+)/residente4/$', residente_add4),
-   
+    url(r'^residente1_edit/(?P<residente_id>\d+)/$', residente1_edit),
     url(r'(?P<residenciaaut_id>\d+)/lista/$', residente_list,name='residente_list'),
     
     url('', include(admin.site.urls)),
