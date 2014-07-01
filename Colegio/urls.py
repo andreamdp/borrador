@@ -5,7 +5,7 @@ from aplicacion.views import *
 from aplicacion.vFicha import *
 from aplicacion.forms import *
 from aplicacion.vResidente import *
-from aplicacion.vResidenteEdit import *
+
 #from django.views.generic import list_detail, date_based, create_update
 
 admin.autodiscover()
