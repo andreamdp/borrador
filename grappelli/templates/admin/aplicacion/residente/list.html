@@ -18,10 +18,10 @@
         </thead>
         <tbody>
             {% if residentes %}
-            <tr class="{% cycle odd,even %}">
-						<td>Nombre</td><td>Apellido</td><td>Año de Comienzo</td><td>Año Residencia</td>   </tr>
-					<tr>
-            {% for residente in residentes %} 
+				<tr class="{% cycle odd,even %}">
+						<td>Nombre</td><td>Apellido</td><td>Año de Comienzo</td><td>Año Residencia</td><td>Modificar</td><td>Eliminar</td>   </tr>
+						<tr>
+						{% for residente in residentes %} 
 			            <td>{{ residente.nombre }}</td>                        <td>{{ residente.apellido }}</td>
                       <td>{{ residente.residencia }}</td>   <td>{{ residente.tipoR }}</td>
                           <td>	    <a href="residente1_edit/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_changelink.gif " />  </a>      </td> 
