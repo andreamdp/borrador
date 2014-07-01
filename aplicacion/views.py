@@ -257,3 +257,12 @@ def jefeResidente_add(request, residenciaaut_id,form_class=JefeResidenteForm, te
     else:
        form = JefeResidenteForm(initial={'residencia': residenciaaut_id})
     return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))   
+def residente1_edit(request, residente_id):
+    contact = get_object_or_404(Residente, pk=residente_id)
+    form = ResidenteForm1(request.POST or None, instance=residente)
+    if form.is_valid():
+        residente = form.save()
+        #this is where you might choose to do stuff.
+        #contact.name = 'test'
+        residente.save()
+        return redirect('residente_list',residenciaaut_id)
