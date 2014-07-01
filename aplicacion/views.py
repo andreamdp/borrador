@@ -267,4 +267,4 @@ def residente1_edit(request, residente_id):
         #this is where you might choose to do stuff.
         #contact.name = 'test'
         residente.save()
-        return redirect('residente_list',residenciaaut_id)
+    return redirect('residente_list',residenciaaut_id)
