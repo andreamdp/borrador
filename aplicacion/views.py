@@ -260,7 +260,7 @@ def jefeResidente_add(request, residenciaaut_id,form_class=JefeResidenteForm, te
        form = JefeResidenteForm(initial={'residencia': residenciaaut_id})
     return render_to_response(template_name,{'form':form,'idResidencia':residenciaaut_id},context_instance=RequestContext(request))   
 def residente1_edit(request, residente_id):
-    contact = get_object_or_404(Residente, pk=residente_id)
+    residente = get_object_or_404(Residente, pk=residente_id)
     form = ResidenteForm1(request.POST or None, instance=residente)
     if form.is_valid():
         residente = form.save()
