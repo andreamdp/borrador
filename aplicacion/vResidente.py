@@ -4,7 +4,31 @@ from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from aplicacion.forms import *
 from django import template
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 register = template.Library()  
+
+
+def residente_list(request,residenciaaut_id,template_name='aplicacion/residente/list.html' ):
+    residentes_list = Residente.active.filter(residencia_id=residenciaaut_id).order_by('tipoR')
+    paginator = Paginator(residentes_list,  6)
+    page = request.GET.get('page')
+    try:
+        residentes = paginator.page(page)
+    except PageNotAnInteger:
+        residentes = paginator.page(1)
+    except EmptyPage:
+        residentes = paginator.page(paginator.num_pages)
+    return render_to_response(template_name, {
+        'residentes': residentes,
+        'idR:': Residente.residencia,
+      #  'paginator': paginator,
+      #  'page': page,
+    })
+
+
+
+
 @csrf_protect
 @register.inclusion_tag('aplicacion/residente/add.html', takes_context=True)
 def residente_add1(request, residenciaaut_id,form_class=ResidenteForm1, template_name='aplicacion/residente/add.html'):
