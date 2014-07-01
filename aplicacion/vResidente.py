@@ -71,14 +71,14 @@ def residente1_edit(request,residenciaaut_id, residente_id):
     if form.is_valid():
         residente = form.save()
        # residente.save()
-        return redirect('lista/')
+        return redirect('/'+residenciaaut_id+'/lista/')
 
     return render_to_response('aplicacion/residente/edit.html',
                               {'form': form,
                                'residente_id': residente_id},
                               context_instance=RequestContext(request)) 
     
-def residente1_delete(request, residente_id):
+def residente1_delete(request,residenciaaut_id, residente_id):
     residente = get_object_or_404(Residente, pk=residente_id)
     residente.delete()
-    return redirect('/aplicacion/residente')
+    return redirect('/'+residenciaaut_id+'/lista/')

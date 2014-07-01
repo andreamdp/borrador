@@ -31,7 +31,7 @@ urlpatterns = patterns('',
  #   url(r'^residente3_edit/(?P<residente_id>\d+)/$', residente1_edit),
  #   url(r'^residente4_edit/(?P<residente_id>\d+)/$', residente1_edit),
  #   url(r'^residente5_edit/(?P<residente_id>\d+)/$', residente1_edit),
-    url(r'^residente1_delete/(?P<residente_id>\d+)/$',residente1_delete),
+    url(r'^(?P<residenciaaut_id>\d+)/lista/residente1_delete/(?P<residente_id>\d+)/$',residente1_delete),
     url(r'(?P<residenciaaut_id>\d+)/lista/$', residente_list,name='residente_list'),
     
     url('', include(admin.site.urls)),
