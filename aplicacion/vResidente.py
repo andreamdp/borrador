@@ -81,4 +81,4 @@ def residente1_edit(request, residente_id):
 def residente1_delete(request, residente_id):
     residente = get_object_or_404(Residente, pk=residente_id)
     residente.delete()
-    return redirect('')
+    return redirect('/aplicacion/residente')
