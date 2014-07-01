@@ -23,7 +23,10 @@
             {% for residente in residentes %}
 			            <td>{{ residente.nombre }}</td>                        <td>{{ residente.apellido }}</td>
                       <td>{{ residente.residencia }}</td>   <td>{{ residente.tipoR }}</td>
-                      <td>	<a href="/residente1_edit/{{ residente.id }}/"><img src="/icon_changelink.gif " />  </a>       <b><a href="/residente_delete/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_deletelink.gif" />  </a></b> </td> 		
+                          <td>	    <a href="residente1_edit/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_changelink.gif " />  </a>      </td> 
+                          <td> <a href="/residente1_delete/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_deletelink.gif " />  </a> </td>     
+    
+                  
             </td>
 </tr>
                  

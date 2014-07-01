@@ -4,6 +4,7 @@ from django.contrib import admin
 from aplicacion.views import *
 from aplicacion.vFicha import *
 from aplicacion.forms import *
+from aplicacion.vResidente import *
 #from django.views.generic import list_detail, date_based, create_update
 
 admin.autodiscover()
@@ -22,10 +23,15 @@ urlpatterns = patterns('',
     (r'reporte/2014/$', residencias2014),
     (r'^grupoInst/(?P<residenciaaut_a_Comienzo>\d+)$',grupos),
     (r'(?P<residenciaaut_id>\d+)/residente1/$', residente_add1),
-    (r'(?P<residenciaaut_id>\d+)/residente2/$', residente_add2),
-    (r'(?P<residenciaaut_id>\d+)/residente3/$', residente_add3),
-    (r'(?P<residenciaaut_id>\d+)/residente4/$', residente_add4),
-    url(r'^residente1_edit/(?P<residente_id>\d+)/$', residente1_edit),
+#    (r'(?P<residenciaaut_id>\d+)/residente2/$', residente_add2),
+#    (r'(?P<residenciaaut_id>\d+)/residente3/$', residente_add3),
+#    (r'(?P<residenciaaut_id>\d+)/residente4/$', residente_add4),
+    (r'^residente1_edit/(?P<residente_id>\d+)/$', residente1_edit),
+ #   url(r'^residente2_edit/(?P<residente_id>\d+)/$', residente1_edit),
+ #   url(r'^residente3_edit/(?P<residente_id>\d+)/$', residente1_edit),
+ #   url(r'^residente4_edit/(?P<residente_id>\d+)/$', residente1_edit),
+ #   url(r'^residente5_edit/(?P<residente_id>\d+)/$', residente1_edit),
+    url(r'^residente1_delete/(?P<residente_id>\d+)/$',residente1_delete),
     url(r'(?P<residenciaaut_id>\d+)/lista/$', residente_list,name='residente_list'),
     
     url('', include(admin.site.urls)),
