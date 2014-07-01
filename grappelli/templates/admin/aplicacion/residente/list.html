@@ -1,5 +1,6 @@
+  
 {% extends 'base.html' %}
-
+{% with "World" as name %} 
 {% block page_title %}Lista de Residentes{% endblock %}
 
 {% block content %}
@@ -20,7 +21,7 @@
             <tr class="{% cycle odd,even %}">
 						<td>Nombre</td><td>Apellido</td><td>Año de Comienzo</td><td>Año Residencia</td>   </tr>
 					<tr>
-            {% for residente in residentes %}
+            {% for residente in residentes %} 
 			            <td>{{ residente.nombre }}</td>                        <td>{{ residente.apellido }}</td>
                       <td>{{ residente.residencia }}</td>   <td>{{ residente.tipoR }}</td>
                           <td>	    <a href="residente1_edit/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_changelink.gif " />  </a>      </td> 
@@ -54,11 +55,13 @@
  
 <div>
 
-
- {% block footer %}
   
+ {% block footer %}
+ 
    <p>
-       <b> Atrás:</b> <a href="javascript:history.go(-2)">Volver </a>
+       <b> Atrás:</b> 
+      
+       <a href="javascript:history.go(-2)">Volver </a>
     </p>
    
   
@@ -66,3 +69,4 @@
   {% endblock %}
 
 </div>
+ {% endwith %}
