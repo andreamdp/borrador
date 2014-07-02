@@ -25,7 +25,7 @@
 						<tr>
 						{% for residente in residentes %} 
 			            <td>{{ residente.nombre }}</td>                        <td>{{ residente.apellido }}</td>
-                      <td>{{ residente.residencia }}</td>   <td>{{ residente.tipoR }}</td>
+                      <td>{{ residente.residencia }}</td>   <td>{% if residente.tipoR == 5  %} Jefe de Residentes {% endif %}</td>
                           <td>	    <a href="residente_edit/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_changelink.gif " />  </a>      </td> 
                           <td> <a href="residente_delete/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_deletelink.gif " />  </a> </td>     
     
