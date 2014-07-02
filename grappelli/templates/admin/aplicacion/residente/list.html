@@ -25,7 +25,13 @@
 						<tr>
 						{% for residente in residentes %} 
 			            <td>{{ residente.nombre }}</td>                        <td>{{ residente.apellido }}</td>
-                      <td>{{ residente.residencia }}</td>   <td>{% if residente.tipoR == 5  %} Jefe de Residentes {% endif %}</td>
+                      <td>{{ residente.residencia }}</td>   
+                      <td>{% if residente.tipoR == 1  %} Residente 1° Año {% endif %}
+                      {% if residente.tipoR == 2  %} Residente 2° Año {% endif %}
+                      {% if residente.tipoR == 3  %} Residente 3° Año {% endif %}
+                      {% if residente.tipoR == 4  %} Residente 4° Año {% endif %}
+                      {% if residente.tipoR == 5  %} Jefe de Residentes {% endif %}
+                      </td>
                           <td>	    <a href="residente_edit/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_changelink.gif " />  </a>      </td> 
                           <td> <a href="residente_delete/{{ residente.id }}/"><img src="{{ MEDIA_URL }}/static/admin/img/icon_deletelink.gif " />  </a> </td>     
     
