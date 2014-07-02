@@ -1,18 +1,8 @@
 {% load grp_tags %}
 {% spaceless %}
     <fieldset class="grp-module {{ fieldset.classes }}">
-<<<<<<< HEAD
-        {% if fieldset.name %}<h2 class="grp-collapse-handler">{{ fieldset.name }}</h2>
-         {% if fieldset.name == 'Cantidad Residentes' %}<span style="font-weight:bold"><a href="lista/" >Listado Residentes</a></span>{% endif %}
-        {% endif %}
-        {% if fieldset.description %}<div class="grp-row"><p class="grp-description">{{ fieldset.description|safe }}</p></div>
-       
-        {% endif %}
-       
-=======
         {% if fieldset.name %}<h2 class="grp-collapse-handler">{{ fieldset.name }}</h2>{% endif %}
         {% if fieldset.description %}<div class="grp-row"><p class="grp-description">{{ fieldset.description|safe }}</p></div>{% endif %}
->>>>>>> 0ffcebb377fcec7b4cad656daed98a592671f002
         {% for line in fieldset %}
             <div class="grp-row grp-cells-{{ line.fields|length }}{% if not line.fields|length_is:"1" %} grp-cells{% else %}{% if line.errors %} grp-errors{% endif %}{% endif %}{% for field in line %} {{ field.field.name }}{% endfor %} ">
                 {% for field in line %}
@@ -31,21 +21,7 @@
                                 {% if field.is_readonly %}
                                     <p class="grp-readonly">{{ field.contents }}</p>
                                 {% else %}
-                                {{ field.field }}
-								
-								
-<<<<<<< HEAD
-    <p>{% if field.field.name == 'cantA_1' %} <a href="residente1/" >Informacion de Residentes</a> {% endif %}
-	 {% if field.field.name == 'cantA_2' %}<a href="residente2/" >Informacion de Residentes</a> {% endif %}
-	{% if field.field.name == 'cantA_3' %} <a href="residente3/" >Informacion de Residentes</a> {% endif %}
-	{% if field.field.name == 'cantA_4' %} <a href="residente4/" >Informacion de Residentes</a> {% endif %}
-	{% if field.field.name == 'jefeResidentes' %} <a href="jefeResidente/" >Informacion de Residentes</a> {% endif %}
-=======
-    <p>{% if field.field.name == 'cantA_1' %} <a href="residente1/" >Informacion Adicional</a> {% endif %}
-	 {% if field.field.name == 'cantA_2' %}<a href="residente2/" >Informacion Adicional</a> {% endif %}
-	{% if field.field.name == 'cantA_3' %} <a href="residente3/" >Informacion Adicional</a> {% endif %}
-	{% if field.field.name == 'cantA_4' %} <a href="residente4/" >Informacion Adicional</a> {% endif %}
->>>>>>> 0ffcebb377fcec7b4cad656daed98a592671f002
+                              ++  {{ field.field }}
                                 {% endif %}
                         {% endif %}
                             {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
@@ -60,5 +36,3 @@
         {% endfor %}
     </fieldset>
 {% endspaceless %}
-								
-
