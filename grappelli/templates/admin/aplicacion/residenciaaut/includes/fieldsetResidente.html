@@ -29,11 +29,11 @@
                                 {{ field.field }}
 								
 								
-    <p>{% if field.field.name == 'cantA_1' %} <a href="residente1/" >Informacion Adicional</a> {% endif %}
-	 {% if field.field.name == 'cantA_2' %}<a href="residente2/" >Informacion Adicional</a> {% endif %}
-	{% if field.field.name == 'cantA_3' %} <a href="residente3/" >Informacion Adicional</a> {% endif %}
-	{% if field.field.name == 'cantA_4' %} <a href="residente4/" >Informacion Adicional</a> {% endif %}
-	
+    <p>{% if field.field.name == 'cantA_1' %} <a href="residente1/" >Informacion de Residentes</a> {% endif %}
+	 {% if field.field.name == 'cantA_2' %}<a href="residente2/" >Informacion de Residentes</a> {% endif %}
+	{% if field.field.name == 'cantA_3' %} <a href="residente3/" >Informacion de Residentes</a> {% endif %}
+	{% if field.field.name == 'cantA_4' %} <a href="residente4/" >Informacion de Residentes</a> {% endif %}
+	{% if field.field.name == 'jefeResidentes' %} <a href="jefeResidente/" >Informacion de Residentes</a> {% endif %}
                                 {% endif %}
                         {% endif %}
                             {% if line.fields|length_is:'1' %}{{ line.errors }}{% endif %}
