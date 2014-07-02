@@ -2,7 +2,12 @@
 {% extends 'base.html' %}
 
 {% block page_title %}Lista de Residentes{% endblock %}
-{% block navmenu %}{% endblock %}
+{% block navmenu %}
+
+<div style="background: #EEE;width: 100%">
+        <ul id="navmenu">
+           <li><a href="/">{% trans "Home" %}</a></li>
+   {% endblock %}        
 {% block content %}
     <h2> Listado de Residentes</h2>
     
