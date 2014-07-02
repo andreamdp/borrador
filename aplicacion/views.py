@@ -16,9 +16,8 @@ from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from django.http import Http404
 from aplicacion.reportes import *
-from django.shortcuts import render_to_response, redirect, get_object_or_404
+
 
 def edit(request, pk):
     if not request.user.is_staff:
