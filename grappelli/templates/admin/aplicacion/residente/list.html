@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-  
 {% extends 'base.html' %}
 
 {% block page_title %}Lista de Residentes{% endblock %}
@@ -9,13 +7,7 @@
         <ul id="navmenu">
            <li><a href="/"></a></li>
    {% endblock %}        
-=======
 
-{% extends 'base.html' %}
-
-{% block page_title %}Lista de Residentes{% endblock %}
-
->>>>>>> 0ffcebb377fcec7b4cad656daed98a592671f002
 {% block content %}
     <h2> Listado de Residentes</h2>
     
@@ -27,16 +19,14 @@
                 <th>&nbsp;</th>
                 <th>&nbsp;</th>
                  <th>&nbsp;</th>
-<<<<<<< HEAD
+
                  <th>&nbsp;</th>
                 <th>&nbsp;</th>
-=======
->>>>>>> 0ffcebb377fcec7b4cad656daed98a592671f002
+
             </tr>
         </thead>
         <tbody>
             {% if residentes %}
-<<<<<<< HEAD
 				<tr class="{% cycle odd,even %}">
 						<td>Nombre</td><td>Apellido</td><td>Año de Comienzo</td><td>Año Residencia</td><td>Modificar</td><td>Eliminar</td>   </tr>
 						<tr>
@@ -54,15 +44,7 @@
     
                   
             </td>
-=======
-            <tr class="{% cycle odd,even %}">
-						<td>Nombre</td><td>Apellido</td><td>Año de Comienzo</td><td>Año Residencia</td>   </tr>
-					<tr>
-            {% for residente in residentes %}
-						
-                        <td>{{ residente.nombre }}</td>                        <td>{{ residente.apellido }}</td>
-                      <td>{{ residente.residencia }}</td>   <td>{{ residente.tipoR }}</td>  
->>>>>>> 0ffcebb377fcec7b4cad656daed98a592671f002
+
 </tr>
                  
              {% endfor %}
@@ -89,8 +71,7 @@
  
 <div>
 
-<<<<<<< HEAD
-  
+
  {% block footer %}
  
    <p>
@@ -98,13 +79,7 @@
       <br>
       <a href="javascript:history.go(-2)" style="background-color:puple">Volver </a>
        <br><br>
-=======
 
- {% block footer %}
-  
-   <p>
-       <b> Atrás:</b> <a href="javascript:history.go(-2)">Volver </a>
->>>>>>> 0ffcebb377fcec7b4cad656daed98a592671f002
     </p>
    
   
