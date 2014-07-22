@@ -16,20 +16,13 @@ from django.contrib.auth.models import User
 from django.core.exceptions import PermissionDenied
 from reportlab.lib.pagesizes import legal, A5
 from django.views.decorators.csrf import csrf_protect
-<<<<<<< HEAD
 from django.template import RequestContext
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from aplicacion.reportes import *
-
-
-=======
 from django.shortcuts import render_to_response
-from django.template import RequestContext
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
 from django.http import Http404
->>>>>>> 0ffcebb377fcec7b4cad656daed98a592671f002
+
 def edit(request, pk):
     if not request.user.is_staff:
         raise PermissionDenied
